@@ -16,7 +16,7 @@ function MobileAbout() {
       <div className="text-center grid items-center justify-center place-items-center">
         <div className="grid items-center justify-center text-center font-[700] leading-[30px] md:leading-[50px] text-[24px] md:text-[35px]">
           <span className="text-primary dark:text-gray">Hello, I'm</span>
-          <span className="name dark:text-white">Precious Egwuenu</span>
+          <span className="name dark:text-white">Brian Azukaeme</span>
         </div>
 
         <p className="m-5 text-[14px] md:text-[20px] leading-[24px] md:leading-[35px] text-para dark:text-gray word-break mt-[24px] md:w-3/5 whitespace-no-wrap">

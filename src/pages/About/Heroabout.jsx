@@ -6,7 +6,7 @@ function Heroabout() {
   const controls = useAnimationHook();
 
   const header = "Hello, I'm".split("");
-  const sentence = "Precious Egwuenu".split("");
+  const sentence = "Brian Azukaeme".split("");
 
   return (
     <motion.div
