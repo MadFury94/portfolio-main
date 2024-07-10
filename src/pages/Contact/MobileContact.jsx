@@ -22,10 +22,10 @@ function MobileContact() {
 
       emailjs
         .sendForm(
-          "service_aakyhrk",
-          "template_scsfe35",
+          "service_f60n7ne",
+          "template_kfsxw9c",
           form.current,
-          "rBHPqsGP1vYUCEoP9"
+          "OjOpgXz1ZSHnuWuye"
         )
         .then(
           (result) => {
