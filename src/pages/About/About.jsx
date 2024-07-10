@@ -7,7 +7,7 @@ const About = () => {
 
   const initals = [
     {
-      id: 1,
+      id: 2,
       text: "FE",
       data: [
         {
@@ -46,12 +46,12 @@ const About = () => {
     },
 
     {
-      id: 2,
-      text: "PD",
+      id: 1,
+      text: "BW",
       data: [
         {
           id: 1,
-          txt: "P",
+          txt: "B",
         },
         {
           id: 2,
@@ -59,19 +59,19 @@ const About = () => {
         },
         {
           id: 3,
-          txt: "E",
+          txt: "I",
         },
         {
           id: 4,
-          txt: "S",
+          txt: "A",
         },
         {
           id: 5,
-          txt: "H",
+          txt: "N",
         },
         {
           id: 6,
-          txt: "D",
+          txt: "W",
         },
         {
           id: 7,
@@ -79,7 +79,49 @@ const About = () => {
         },
         {
           id: 8,
-          txt: "V",
+          txt: "B",
+        },
+      ],
+    },
+    {
+      id: 3,
+      text: "WP",
+      data: [
+        {
+          id: 1,
+          txt: "W",
+        },
+        {
+          id: 2,
+          txt: "O",
+        },
+        {
+          id: 3,
+          txt: "R",
+        },
+        {
+          id: 4,
+          txt: "D",
+        },
+        {
+          id: 5,
+          txt: "P",
+        },
+        {
+          id: 6,
+          txt: "R",
+        },
+        {
+          id: 7,
+          txt: "E",
+        },
+        {
+          id: 8,
+          txt: "S",
+        },
+        {
+          id: 8,
+          txt: "S",
         },
       ],
     },

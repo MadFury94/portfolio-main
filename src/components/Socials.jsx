@@ -41,7 +41,7 @@ const Socials = () => {
           className="gap-5 grid"
         >
           <a
-            href="https://www.linkedin.com/in/preciousegwuenu/"
+            href="https://www.linkedin.com/in/azukaeme-brian-4329b0246/"
             target="_blank"
           >
             <FloatButton icon={<FaLinkedinIn />} className="dark:bg-white" />
@@ -58,21 +58,6 @@ const Socials = () => {
               className="dark:bg-white hover:opacity-75"
             />
           </a>
-          {/* <a
-            href="https://www.tiktok.com/@preshdevvv?_t=8j4w9YmFWre&_r=1"
-            target="_blank"
-          >
-            <FloatButton
-              icon={<FaTiktok />}
-              className="dark:bg-white hover:opacity-75"
-            />
-          </a>
-          <a href="https://www.instagram.com/preshdevvv/" target="_blank">
-            <FloatButton
-              icon={<BsInstagram />}
-              className="dark:bg-white hover:opacity-75"
-            />
-          </a> */}
         </motion.div>
       </FloatButton.Group>
     </div>

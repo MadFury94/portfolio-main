@@ -5,12 +5,7 @@ const Navbar = () => {
     { name: "About", path: "/" },
     { name: "Skills", path: "/skills" },
     { name: "Projects", path: "/projects" },
-    { name: "Blog", path: "https://preshblog.vercel.app/", external: true },
-    {
-      name: "Video",
-      path: "https://preshpie.notion.site/Video-Editing-Portfolio-ea5a25af009a4423a444f0793132f244?pvs=4",
-      external: true,
-    },
+
     { name: "Contact", path: "/contact" },
   ];
   return (

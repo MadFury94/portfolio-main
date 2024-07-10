@@ -38,7 +38,7 @@ function Heroabout() {
         I am a{" "}
         <span className="text-secondary font-bold dark:text-white">
           {" "}
-          frontend developer and WordPress support specialist{" "}
+          Frontend developer(FE) and WordPress support(WP) specialist{" "}
         </span>{" "}
         I have a strong background in creating visually appealing and{" "}
         <span className="y font-bold dark:text-white">
