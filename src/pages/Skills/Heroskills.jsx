@@ -4,9 +4,9 @@ import useAnimationHook from "../../components/useAnimationHook";
 import ResumeButton from "../../components/ResumeButton";
 
 const Heroskills = () => {
-  const header = "I work mostly with".split("");
-  const sentence = "Frontend".split("");
-  const word = "Technologies".split("");
+  const header = "I work with".split("");
+  const sentence = "Frontend Tech".split("");
+  const word = "and WordPress".split("");
   const controls = useAnimationHook();
 
   return (

@@ -78,9 +78,9 @@ function MobileSkills() {
     >
       <div className="grid justify-center items-center place-items-center text-center">
         <span className="text-primary dark:text-gray text-[24px] md:text-[35px] leading-[30px] md:leading-[50px] font-[700]">
-          I work mostly with{" "}
+          I work with{" "}
           <p className="text-secondary dark:text-white">
-            Frontend Technologies
+            Frontend Technologies & WordPress.
           </p>
         </span>
 

@@ -31,14 +31,7 @@ function MobileNav() {
       text: "CONTACT",
       path: "contact",
     },
-    {
-      id: 5,
-      blog: "BLOG",
-    },
-    {
-      id: 6,
-      video: "VIDEOS",
-    },
+
     {
       id: 7,
       icon: <UseDarkmode />,
@@ -67,7 +60,7 @@ function MobileNav() {
             to="/"
             className="cursor-pointer dark:text-white text-secondary"
           >
-            PreshDev
+            BrianWebDev
           </Link>
         </h1>
 

@@ -45,7 +45,7 @@ function MobileProject() {
 
         <div className="mt-[28px] flex items-center justify-center">
           <a
-            href="https://github.com/preshpi"
+            href="https://github.com/madfury94"
             target="_blank"
             className="relative w-[160px] h-[48px] group text-center  px-6 py-3 font-bold"
           >

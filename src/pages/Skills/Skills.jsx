@@ -1,10 +1,10 @@
 import React from "react";
 import { IoLogoHtml5 } from "react-icons/io";
 import { ImGit } from "react-icons/im";
-import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandNuxt } from "react-icons/tb";
 import { SiTypescript, SiTailwindcss } from "react-icons/si";
 import { IoLogoSass } from "react-icons/io";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaVuejs, FaWordpress } from "react-icons/fa";
 import { DiCss3Full, DiJavascript1 } from "react-icons/di";
 import { motion } from "framer-motion";
 import useAnimationHook from "../../components/useAnimationHook";
@@ -21,6 +21,18 @@ export const data = [
     icons: <FaReact />,
     text: "React",
     color: "#60DAFB",
+  },
+  {
+    id: 2,
+    icons: <FaVuejs />,
+    text: "Vue",
+    color: "#3FB581",
+  },
+  {
+    id: 2,
+    icons: <FaWordpress />,
+    text: "WordPress",
+    color: "#2995BE",
   },
   {
     id: 3,
@@ -63,6 +75,12 @@ export const data = [
     icons: <TbBrandNextjs />,
     text: "NextJS",
     color: "#111",
+  },
+  {
+    id: 9,
+    icons: <TbBrandNuxt />,
+    text: "NuxtJS",
+    color: "#2D485D",
   },
 ];
 const Skills = () => {

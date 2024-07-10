@@ -40,7 +40,7 @@ const Herocontact = () => {
         <span className="text-secondary dark:text-gray font-bold">
           onsite full-time,
         </span>{" "}
-        part-time, and contract frontend web development{" "}
+        part-time, and contract frontend web development or WordPress support{" "}
         <span className="text-secondary dark:text-gray font-bold">jobs.</span>
       </p>
     </motion.div>

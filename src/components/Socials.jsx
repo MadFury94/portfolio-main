@@ -46,19 +46,19 @@ const Socials = () => {
           >
             <FloatButton icon={<FaLinkedinIn />} className="dark:bg-white" />
           </a>
-          <a href="https://github.com/preshpi" target="_blank">
+          <a href="https://github.com/madfury94" target="_blank">
             <FloatButton
               icon={<FaGithub />}
               className="dark:bg-white hover:opacity-75"
             />
           </a>
-          <a href="https://twitter.com/preshdevvv" target="_blank">
+          <a href="https://x.com/i_amfury" target="_blank">
             <FloatButton
               icon={<FaTwitter />}
               className="dark:bg-white hover:opacity-75"
             />
           </a>
-          <a
+          {/* <a
             href="https://www.tiktok.com/@preshdevvv?_t=8j4w9YmFWre&_r=1"
             target="_blank"
           >
@@ -72,7 +72,7 @@ const Socials = () => {
               icon={<BsInstagram />}
               className="dark:bg-white hover:opacity-75"
             />
-          </a>
+          </a> */}
         </motion.div>
       </FloatButton.Group>
     </div>
