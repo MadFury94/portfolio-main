@@ -38,6 +38,24 @@ const fetchFeaturedImage = async (mediaId) => {
   return data.source_url;
 };
 
+const extractSecondPart = (link) => {
+  const parts = link.split("/");
+  return parts[parts.length - 1];
+};
+
+const fetchCategories = async (categoryIds) => {
+  const categories = await Promise.all(
+    categoryIds.map(async (categoryId) => {
+      const response = await fetch(
+        `https://brianwebdev.site/wp-json/wp/v2/categories/${categoryId}`
+      );
+      const data = await response.json();
+      return data.slug;
+    })
+  );
+  return categories.join("/");
+};
+
 // Function to fetch tag names
 const fetchTags = async (tagIds) => {
   const tags = await Promise.all(
@@ -62,6 +80,7 @@ const Projects = () => {
         const response = await fetch(
           "https://brianwebdev.site/wp-json/wp/v2/posts"
         );
+
         const data = await response.json();
 
         const projects = await Promise.all(
@@ -69,14 +88,19 @@ const Projects = () => {
             const featuredImageUrl = await fetchFeaturedImage(
               post.featured_media
             );
+            console.log(data);
+
             const tags = await fetchTags(post.tags);
+            const categories = post.categories.map((cat) => cat.slug);
+            const projectLink = ensureUrl(post.meta._uag_custom_page_level_css);
+            const codeLink = extractSecondPart(post.link);
 
             return {
               title: post.title.rendered,
               subtitle: stripHTMLTags(post.content.rendered),
               language: tags,
               codeLink: codeLink,
-              viewLink: ensureUrl(post.link),
+              viewLink: ensureUrl(post.uagb_excerpt),
               mainImage: {
                 asset: {
                   url: featuredImageUrl,
