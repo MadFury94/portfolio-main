@@ -1,18 +1,13 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import schemas from './sanity/schemas'
 
-export default defineConfig({
-  name: 'default',
-  title: 'portfolio',
-
-  projectId: 'kili4jsv',
+export const config = defineConfig({
+  projectId: '8uv465dw',
   dataset: 'production',
-
-  plugins: [structureTool(), visionTool()],
-
-  schema: {
-    types: schemaTypes,
-  },
+  title: 'My Personal Website',
+  apiVersion: '2024-07-11',
+  basePath: '/admin',
+  plugins: [structureTool()],
+  schema: {types: schemas},
 })
