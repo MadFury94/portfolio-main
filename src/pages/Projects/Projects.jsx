@@ -11,65 +11,6 @@ const stripHTMLTags = (str) => {
   return str.replace(/<[^>]*>?/gm, "");
 };
 
-const ensureUrl = (url) => {
-  if (!url) return "#";
-  if (!url.startsWith("http://") && !url.startsWith("https://")) {
-    return `http://${url}`;
-  }
-  return url;
-};
-
-const extractLinksFromExcerpt = (excerpt) => {
-  const div = document.createElement("div");
-  div.innerHTML = excerpt;
-  const links = div.getElementsByTagName("a");
-  if (links.length > 0) {
-    return ensureUrl(links[0].href); // Assuming the first link is the one you want
-  }
-  return "#";
-};
-
-// Function to fetch featured image URL
-const fetchFeaturedImage = async (mediaId) => {
-  const response = await fetch(
-    `https://brianwebdev.site/wp-json/wp/v2/media/${mediaId}`
-  );
-  const data = await response.json();
-  return data.source_url;
-};
-
-const extractSecondPart = (link) => {
-  const parts = link.split("/");
-  return parts[parts.length - 1];
-};
-
-const fetchCategories = async (categoryIds) => {
-  const categories = await Promise.all(
-    categoryIds.map(async (categoryId) => {
-      const response = await fetch(
-        `https://brianwebdev.site/wp-json/wp/v2/categories/${categoryId}`
-      );
-      const data = await response.json();
-      return data.slug;
-    })
-  );
-  return categories.join("/");
-};
-
-// Function to fetch tag names
-const fetchTags = async (tagIds) => {
-  const tags = await Promise.all(
-    tagIds.map(async (tagId) => {
-      const response = await fetch(
-        `https://brianwebdev.site/wp-json/wp/v2/tags/${tagId}`
-      );
-      const data = await response.json();
-      return data.name;
-    })
-  );
-  return tags.join(", ");
-};
-
 const Projects = () => {
   const controls = useAnimationHook();
   const [projectData, setProjectData] = useState([]);
@@ -78,42 +19,28 @@ const Projects = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://brianwebdev.site/wp-json/wp/v2/posts"
+          "https://brianwebdev.site/wp-json/wp/v2/projects"
         );
-
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         const data = await response.json();
-
-        const projects = await Promise.all(
-          data.map(async (post) => {
-            const featuredImageUrl = await fetchFeaturedImage(
-              post.featured_media
-            );
-            console.log(data);
-
-            const tags = await fetchTags(post.tags);
-            const categories = post.categories.map((cat) => cat.slug);
-            const projectLink = ensureUrl(post.meta._uag_custom_page_level_css);
-            const codeLink = extractSecondPart(post.link);
-
-            return {
-              title: post.title.rendered,
-              subtitle: stripHTMLTags(post.content.rendered),
-              language: tags,
-              codeLink: codeLink,
-              viewLink: ensureUrl(post.uagb_excerpt),
-              mainImage: {
-                asset: {
-                  url: featuredImageUrl,
-                },
-                alt: post.title.rendered,
-              },
-            };
-          })
-        );
-
+        const projects = data.map((post) => ({
+          title: post.title.rendered,
+          subtitle: stripHTMLTags(post.content.rendered),
+          language: post.acf.tools,
+          codeLink: post.acf.code_link,
+          viewLink: post.acf.project_link,
+          mainImage: {
+            asset: {
+              url: post.acf.project_image.url,
+            },
+            alt: post.acf.project_image.alt,
+          },
+        }));
         setProjectData(projects);
       } catch (error) {
-        console.error(error);
+        console.error("Fetch error:", error);
       }
     };
 
