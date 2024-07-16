@@ -20,7 +20,7 @@ function MobileProject() {
         </span>
 
         <p className="text-[14px] md:text-[20px] leading-[24px] md:leading-[35px] text-para dark:text-gray word-break mt-[24px] md:w-[550px] w-[350px] whitespace-no-wrap">
-          In my leisure time, I enjoy{" "}
+          In my free time, I enjoy{" "}
           <span className="text-secondary dark:text-white font-bold">
             experimenting
           </span>{" "}
@@ -30,7 +30,7 @@ function MobileProject() {
           </span>{" "}
           or{" "}
           <span className="text-secondary dark:text-white font-bold">
-            useful.
+            solving WordPress issues.
           </span>{" "}
           A few examples of these projects can be found on my{" "}
           <span className="text-secondary dark:text-white font-bold">
