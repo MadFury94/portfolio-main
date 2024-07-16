@@ -13,8 +13,15 @@ const Projects = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const token =
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2JyaWFud2ViZGV2LnNpdGUiLCJpYXQiOjE3MjExMjk1NTAsIm5iZiI6MTcyMTEyOTU1MCwiZXhwIjoxNzIxNzM0MzUwLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIyIn19fQ.30SJoL1qWkZ8NUhlKqxJfYhSfaEt1ptPDXWRaSSNAZI";
         const response = await fetch(
-          "https://brianwebdev.site/wp-json/wp/v2/projects"
+          "https://brianwebdev.site/wp-json/wp/v2/projects",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
