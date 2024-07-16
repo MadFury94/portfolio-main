@@ -6,11 +6,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { motion } from "framer-motion";
 import useAnimationHook from "../../components/useAnimationHook";
 
-const stripHTMLTags = (str) => {
-  if (!str) return "";
-  return str.replace(/<[^>]*>?/gm, "");
-};
-
 const Projects = () => {
   const controls = useAnimationHook();
   const [projectData, setProjectData] = useState([]);
@@ -27,7 +22,7 @@ const Projects = () => {
         const data = await response.json();
         const projects = data.map((post) => ({
           title: post.title.rendered,
-          subtitle: stripHTMLTags(post.content.rendered),
+          subtitle: post.content.rendered,
           language: post.acf.tools,
           codeLink: post.acf.code_link,
           viewLink: post.acf.project_link,
